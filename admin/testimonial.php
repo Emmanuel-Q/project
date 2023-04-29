@@ -20,7 +20,7 @@ if (!isset($_SESSION['loggedin'])) {
 		
 		<!-- Sidebar -->
 		<div id="pgside">
-			<a href="home.php" class="current"><h2>Dashboard</h2></a>
+			<a href="home.php"><h2>Dashboard</h2></a>
 			<a href="profile.php"><i class="fas fa-user-circle"></i> Profile</a>
 			<a href="carousel.php"> Carousel</a>
 			<a href="about.php"> About</a>
@@ -28,13 +28,13 @@ if (!isset($_SESSION['loggedin'])) {
 			<a href="header.php"> Header</a>
 			<a href="services.php"> Services</a>
 			<a href="team.php"> Team</a>
-			<a href="testimonial.php"> Testimonials</a>
+			<a href="testimonial.php" class="current"> Testimonials</a>
 			<a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
     	</div>
 		
 		<!-- Main Content Area -->
 		<div class="content">
-			<h2>Home Page</h2>
+			<h2>Testimonial Section</h2>
 			<p>Welcome back, <?=$_SESSION['name']?>!</p>
 		</div>
 	</body>
