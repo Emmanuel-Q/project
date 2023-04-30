@@ -1,3 +1,9 @@
+<?php
+	//Start session
+	session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -8,9 +14,17 @@
         <link rel="stylesheet" href="style.css">
 	</head>
 	<body>
+	<?php
+		if( isset($_SESSION['ERRMSG_ARR']) && is_array($_SESSION['ERRMSG_ARR']) && count($_SESSION['ERRMSG_ARR']) >0 ) {
+			foreach($_SESSION['ERRMSG_ARR'] as $msg) {
+				echo '<div style="color: red; text-align: center;">',$msg,'</div><br>'; 
+			}
+			unset($_SESSION['ERRMSG_ARR']);
+			}
+			?>
 		<div class="login">
 			<h1>Project Login</h1> 
-			<form action="authenticate.php" method="post">
+			<form action="login.php" method="post">
 				<label for="username">
 					<i class="fas fa-user"></i>
 				</label>

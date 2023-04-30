@@ -1,6 +1,20 @@
+
 <?php
+
+    
+	//Start session
+	session_start();
+	
+	//Check whether the session variable SESS_MEMBER_ID is present or not
+	if(!isset($_SESSION['id']) || (trim($_SESSION['id']) == '')) {
+		header("location: home.php");
+		exit();
+	} 
+
+
+/*
 session_start();
-// Change this to your connection info.
+// Connect to database
 $DATABASE_HOST = 'localhost';
 $DATABASE_USER = 'root';
 $DATABASE_PASS = '';
@@ -46,5 +60,5 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?'
     }
 
 	$stmt->close();
-}
+} */
 ?>
